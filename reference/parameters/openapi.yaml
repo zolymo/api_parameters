@@ -1,0 +1,57 @@
+openapi: 3.0.0
+info:
+  title: parameters
+  version: '1.0'
+  description: 'El presente muesta los servicios web (web services) de tipo REST, que están implementados en el sistema de hostal, es importante considerar que la documentación mostrada aqui es para uso interno.'
+  contact:
+    name: Hans Villaizan
+    url: zolymo.blogspot.com
+    email: zolymo@cgmail.om
+  license:
+    name: Apache 2.0
+servers:
+  - url: 'http://35.247.212.153:8081/parameters'
+paths:
+  /v1/company/corporate: 
+    get: 
+      summary: Lista las principales
+      tags:
+        - company
+      operationId: getCorporate
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../common/models/companyvo.v1.yaml
+              examples:
+                lista corporativo:
+                  value:
+                    createdBy: INITIALCFG
+                    createdAt: '05/09/2019 18:43:58'
+                    updatedBy: INITIALCFG
+                    updatedAt: '05/09/2019 18:43:58'
+                    deletedBy: null
+                    deletedAt: null
+                    activeRow: true
+                    nit: XXXXXXXXXXXC
+                    name: INOVASTUDIO GROUP SAC
+                    commercialName: INOVASTUDIO
+                    slogan: Todo nace con una idea
+                    abbreviation: AAA
+                    idCompany: iNovaStudio
+                    contactPeople: Hans Yamamoto
+                    logoPath: null
+                    idkey: AAA
+                    generatedUidc: true
+                    masterCompany: '-'
+                    organizationType: CORPORATIVO
+                    personeryType: JURIDICA
+                    companyType: HOSTAL
+                    nitType: RUC
+                    stakeholderType: CLIENTE_INTERNO
+                    userAudit: null
+      description: listacorporate
+components:
+  schemas: {}

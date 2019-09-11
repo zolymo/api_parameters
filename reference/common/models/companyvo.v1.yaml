@@ -1,0 +1,79 @@
+type: object
+description: CompanyVO
+x-examples:
+  data completa:
+    value:
+      createdBy: INITIALCFG
+      createdAt: '05/09/2019 18:43:58'
+      updatedBy: INITIALCFG
+      updatedAt: '05/09/2019 18:43:58'
+      deletedBy: null
+      deletedAt: null
+      activeRow: true
+      nit: XXXXXXXXXXXC
+      name: INOVASTUDIO GROUP SAC
+      commercialName: INOVASTUDIO
+      slogan: Todo nace con una idea
+      abbreviation: AAA
+      idCompany: iNovaStudio
+      contactPeople: Hans Yamamoto
+      logoPath: null
+      idkey: AAA
+      generatedUidc: true
+      masterCompany: '-'
+      organizationType: CORPORATIVO
+      personeryType: JURIDICA
+      companyType: HOSTAL
+      nitType: RUC
+      stakeholderType: CLIENTE_INTERNO
+      userAudit: null
+properties:
+  createdBy:
+    type: string
+  createdAt:
+    type: string
+  updatedBy:
+    type: string
+  updatedAt:
+    type: string
+  deletedBy:
+    type: string
+  deletedAt:
+    type: string
+  activeRow:
+    type: boolean
+  nit:
+    type: string
+  name:
+    type: string
+  commercialName:
+    type: string
+  slogan:
+    type: string
+  abbreviation:
+    type: string
+  idCompany:
+    type: string
+  contactPeople:
+    type: string
+  logoPath:
+    type: string
+  idkey:
+    type: string
+  generateUidc:
+    type: boolean
+  masterCompany:
+    type: string
+  organizationType:
+    type: string
+  personeryType:
+    type: string
+  companyType:
+    type: string
+  nitType:
+    type: string
+  stakeholderType:
+    type: string
+required:
+  - idkey
+title: 'CompanyVO'
