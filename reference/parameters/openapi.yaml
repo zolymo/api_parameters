@@ -12,8 +12,8 @@ info:
 servers:
   - url: 'http://35.247.212.153:8081/parameters'
 paths:
-  /v1/company/corporate: 
-    get: 
+  /v1/company/corporate:
+    get:
       summary: Lista las principales
       tags:
         - company
