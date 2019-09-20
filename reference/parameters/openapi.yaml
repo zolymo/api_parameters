@@ -85,7 +85,7 @@ paths:
                   idKey: null
                   generatedUidc: true
                   masterCompany: null
-                  organizationType: SUCURSAL
+                  organizationType: CORPORATIVO
                   personeryType: JURIDICA
                   companyType: HOSTAL
                   nitType: RUC
@@ -94,36 +94,5 @@ paths:
                     loginname: ZOLYTO
                     corporate: BAA
                     branch: BAX
-  /v1/company:
-    get:
-      summary: Lista las sucursales
-      tags:
-        - company
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: ../common/models/companyvo.v1.yaml
-              examples:
-                sucursal: {}
-      description: lista sucursales del usuario logueado
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: ../common/models/userauditvo.v1.yaml
-            examples:
-              userAudit:
-                value:
-                  loginname: ZOLYMO
-                  corporate: AAA
-                  branch: BAA
-    post:
-      summary: Registra sucursal o corporativo
-      tags:
-        - company
-      responses: {}
 components:
   schemas: {}
