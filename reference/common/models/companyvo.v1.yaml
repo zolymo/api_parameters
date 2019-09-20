@@ -27,6 +27,7 @@ x-examples:
       nitType: RUC
       stakeholderType: CLIENTE_INTERNO
       userAudit: null
+title: CompanyVO
 properties:
   createdBy:
     type: string
@@ -74,6 +75,7 @@ properties:
     type: string
   stakeholderType:
     type: string
+  userAudit:
+    $ref: ./userauditvo.v1.yaml
 required:
   - idkey
-title: 'CompanyVO'

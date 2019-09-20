@@ -1,0 +1,14 @@
+title: UserAuditVO
+type: object
+properties:
+  loginname:
+    type: string
+  corporate:
+    type: string
+  branch:
+    type: string
+required:
+  - loginname
+  - corporate
+  - branch
+description: modelo de usuario logueado
