@@ -14,7 +14,7 @@ servers:
 paths:
   /v1/company/corporate:
     get:
-      summary: Lista Corporate
+      summary: Lista Company Corporate
       tags:
         - company
       operationId: getCorporate
@@ -52,11 +52,11 @@ paths:
                     nitType: RUC
                     stakeholderType: CLIENTE_INTERNO
                     userAudit: null
-      description: RCorp
+      description: Lista empresas de tipo Corporativo
       parameters: []
   /v1/company/corporate/inactive:
     get:
-      summary: Lista Corporate Inactivo
+      summary: Lista Company Corporate Eliminado
       tags:
         - company
       responses:
@@ -66,11 +66,11 @@ paths:
             application/json:
               schema:
                 $ref: ./models/companyvo.v1.yaml
-      description: RCorpInactivo
+      description: Lista empresas de tipo Corporativo que fueron eliminadas
       operationId: getCorporateInactive
   /v1/company:
     get:
-      summary: Lista Branch
+      summary: Lista Company Branch
       tags:
         - company
       responses:
@@ -91,7 +91,7 @@ paths:
                   loginname: ZOLYMO
                   corporate: BAA
                   branch: BAX
-      description: RBranch
+      description: Lista hostales tipo Sucursal
       operationId: getBranch
       parameters:
         - schema:
@@ -99,12 +99,6 @@ paths:
             default: application/json
           in: header
           name: Content-Type
-          required: true
-        - schema:
-            type: string
-            default: '35.247.212.153:8081'
-          in: header
-          name: Host
           required: true
     parameters: []
     post:
@@ -368,7 +362,7 @@ paths:
                       nitType: RUC
                       stakeholderType: CLIENTE_INTERNO
                       userAudit: null
-      description: Lista sucursales eliminadas
+      description: Lista hostales tipo Sucursal eliminadas
       requestBody:
         content:
           application/json:

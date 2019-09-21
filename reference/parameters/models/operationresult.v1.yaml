@@ -15,3 +15,4 @@ x-examples:
       codigo: '0000'
       descripcion: Satisfactorio
       codigobackend: null
+description: 'Resultado de las operaciones POST, PUT y DELETE'

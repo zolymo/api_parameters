@@ -11,7 +11,7 @@ required:
   - loginname
   - corporate
   - branch
-description: modelo de usuario logueado
+description: Usuario Logueado
 x-examples:
   userAuditVO:
     value:
