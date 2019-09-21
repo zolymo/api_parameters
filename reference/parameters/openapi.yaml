@@ -197,5 +197,189 @@ paths:
           in: header
           name: Content-Type
           required: true
+  '/v1/company/{idkey}':
+    parameters:
+      - schema:
+          type: string
+        name: idkey
+        in: path
+        required: true
+        description: ''
+    put:
+      summary: edita
+      tags:
+        - company
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../common/models/operationresult.v1.yaml
+              examples:
+                editado CAX:
+                  value:
+                    codigo: '0000'
+                    descripcion: Satisfactorio
+                    codigobackend: null
+      description: edita sucursal especifica
+      operationId: editaCompany
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../common/models/companyvo.v1.yaml
+            examples:
+              edita idkey=CAX:
+                value:
+                  createdBy: ZOLYTO
+                  createdAt: '21/09/2019 17:40:19'
+                  updatedBy: null
+                  updatedAt: null
+                  deletedBy: null
+                  deletedAt: null
+                  activeRow: true
+                  nit: '10702433924'
+                  name: Hostal Novo
+                  commercialName: ''
+                  slogan: ''
+                  abbreviation: CAX
+                  idCompany: Hostal Novo Texto2
+                  contactPeople: Hans Villaizan Cel 982581458
+                  logoPath: null
+                  idkey: CAX
+                  generatedUidc: true
+                  masterCompany: CAA
+                  organizationType: SUCURSAL
+                  personeryType: JURIDICA
+                  companyType: HOSTAL
+                  nitType: RUC
+                  stakeholderType: CLIENTE_INTERNO
+                  userAudit:
+                    loginname: ZOLYmO
+                    corporate: CAA
+                    branch: CAX
+    get:
+      summary: Lista sucursal
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../common/models/companyvo.v1.yaml
+              examples:
+                idkey=CAX:
+                  value:
+                    createdBy: ZOLYTO
+                    createdAt: '21/09/2019 17:40:19'
+                    updatedBy: ZOLYmO
+                    updatedAt: '21/09/2019 18:30:56'
+                    deletedBy: null
+                    deletedAt: null
+                    activeRow: true
+                    nit: '10702433924'
+                    name: Hostal Novo
+                    commercialName: ''
+                    slogan: ''
+                    abbreviation: CAX
+                    idCompany: Hostal Novo Texto2
+                    contactPeople: Hans Villaizan Cel 982581458
+                    logoPath: null
+                    idkey: CAX
+                    generatedUidc: true
+                    masterCompany: CAA
+                    organizationType: SUCURSAL
+                    personeryType: JURIDICA
+                    companyType: HOSTAL
+                    nitType: RUC
+                    stakeholderType: CLIENTE_INTERNO
+                    userAudit: null
+      description: Lista sucursal especifica
+      tags:
+        - company
+      operationId: getcompanyspec
+    delete:
+      summary: Elimina sucursal
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../common/models/operationresult.v1.yaml
+              examples:
+                resultado:
+                  value:
+                    codigo: '0000'
+                    descripcion: Satisfactorio
+                    codigobackend: null
+      description: elimina sucursal
+      tags:
+        - company
+      operationId: borrabranch
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../common/models/userauditvo.v1.yaml
+            examples:
+              usuarioLogueado:
+                value:
+                  loginname: ZOLYMO
+                  corporate: CAA
+                  branch: CAX
+  /v1/company/inactive:
+    get:
+      summary: Lista Sucursales Eliminadas
+      tags:
+        - company
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../common/models/companyvo.v1.yaml
+              examples:
+                lista:
+                  value:
+                    - createdBy: ZOLYTO
+                      createdAt: '21/09/2019 17:40:19'
+                      updatedBy: ZOLYmO
+                      updatedAt: '21/09/2019 18:30:56'
+                      deletedBy: ZOLYMO
+                      deletedAt: '21/09/2019 18:48:04'
+                      activeRow: false
+                      nit: '10702433924'
+                      name: Hostal Novo
+                      commercialName: ''
+                      slogan: ''
+                      abbreviation: CAX
+                      idCompany: Hostal Novo Texto2
+                      contactPeople: Hans Villaizan Cel 982581458
+                      logoPath: null
+                      idkey: CAX
+                      generatedUidc: true
+                      masterCompany: CAA
+                      organizationType: SUCURSAL
+                      personeryType: JURIDICA
+                      companyType: HOSTAL
+                      nitType: RUC
+                      stakeholderType: CLIENTE_INTERNO
+                      userAudit: null
+      description: Lista sucursales eliminadas
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../common/models/userauditvo.v1.yaml
+            examples:
+              usuarioLogueado:
+                value:
+                  loginname: ZOLYMMO
+                  corporate: CAA
+                  branch: CAX
+      operationId: getdeletedbranch
 components:
   schemas: {}
