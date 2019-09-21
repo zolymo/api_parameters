@@ -24,7 +24,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../common/models/companyvo.v1.yaml
+                $ref: ./models/companyvo.v1.yaml
               examples:
                 lista corporativo:
                   value:
@@ -65,7 +65,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../common/models/companyvo.v1.yaml
+                $ref: ./models/companyvo.v1.yaml
       description: RCorpInactivo
       operationId: getCorporateInactive
   /v1/company:
@@ -79,12 +79,12 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../common/models/companyvo.v1.yaml
+                $ref: ./models/companyvo.v1.yaml
       requestBody:
         content:
           application/json:
             schema:
-              $ref: ../common/models/userauditvo.v1.yaml
+              $ref: ./models/userauditvo.v1.yaml
             examples:
               usuarioLogueado:
                 value:
@@ -267,7 +267,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../common/models/companyvo.v1.yaml
+                $ref: ./models/companyvo.v1.yaml
               examples:
                 idkey=CAX:
                   value:
@@ -340,7 +340,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../common/models/companyvo.v1.yaml
+                $ref: ./models/companyvo.v1.yaml
               examples:
                 lista:
                   value:
@@ -373,7 +373,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: ../common/models/userauditvo.v1.yaml
+              $ref: ./models/userauditvo.v1.yaml
             examples:
               usuarioLogueado:
                 value:
