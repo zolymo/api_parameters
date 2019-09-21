@@ -14,7 +14,7 @@ servers:
 paths:
   /v1/company/corporate:
     get:
-      summary: Lista las principales
+      summary: Lista Corporate
       tags:
         - company
       operationId: getCorporate
@@ -52,20 +52,84 @@ paths:
                     nitType: RUC
                     stakeholderType: CLIENTE_INTERNO
                     userAudit: null
-      description: listacorporate
-    post:
-      summary: ''
+      description: RCorp
+      parameters: []
+  /v1/company/corporate/inactive:
+    get:
+      summary: Lista Corporate Inactivo
+      tags:
+        - company
       responses:
         '200':
           description: OK
-      description: creacorporate
+          content:
+            application/json:
+              schema:
+                $ref: ../common/models/companyvo.v1.yaml
+      description: RCorpInactivo
+      operationId: getCorporateInactive
+  /v1/company:
+    get:
+      summary: Lista Branch
+      tags:
+        - company
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../common/models/companyvo.v1.yaml
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../common/models/userauditvo.v1.yaml
+            examples:
+              usuarioLogueado:
+                value:
+                  loginname: ZOLYMO
+                  corporate: BAA
+                  branch: BAX
+      description: RBranch
+      operationId: getBranch
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
+        - schema:
+            type: string
+            default: '35.247.212.153:8081'
+          in: header
+          name: Host
+          required: true
+    parameters: []
+    post:
+      summary: Crea Branch
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: ../common/models/operationresult.v1.yaml
+              examples:
+                corporativoCreado:
+                  value:
+                    codigo: '0000'
+                    descripcion: Satisfactorio
+                    codigobackend: null
+      description: Crea Sucursal
       requestBody:
         content:
           application/json:
             schema:
               $ref: ../common/models/companyvo.v1.yaml
             examples:
-              crear:
+              creaCorporativo:
                 value:
                   createdBy: null
                   createdAt: null
@@ -75,12 +139,12 @@ paths:
                   deletedAt: null
                   activeRow: null
                   nit: '10702433924'
-                  name: HOSTAL BLUES
+                  name: Corporacion CAA
                   commercialName: ''
                   slogan: ''
-                  abbreviation: BAX
-                  idCompany: Hostal Blues Suc
-                  contactPeople: Jhonny Flores Cel 982581458
+                  abbreviation: CAA
+                  idCompany: Corporacion CAA
+                  contactPeople: HansVillaizan Cel 982581458
                   logoPath: null
                   idKey: null
                   generatedUidc: true
@@ -92,7 +156,46 @@ paths:
                   stakeholderType: CLIENTE_INTERNO
                   userAudit:
                     loginname: ZOLYTO
-                    corporate: BAA
+                    corporate: AAA
                     branch: BAX
+              creaBranch:
+                value:
+                  createdBy: null
+                  createdAt: null
+                  updatedBy: null
+                  updatedAt: null
+                  deletedBy: null
+                  deletedAt: null
+                  activeRow: null
+                  nit: '10702433924'
+                  name: Hostal Novo
+                  commercialName: ''
+                  slogan: ''
+                  abbreviation: CAX
+                  idCompany: Hostal Novo
+                  contactPeople: Hans Villaizan Cel 982581458
+                  logoPath: null
+                  idKey: null
+                  generatedUidc: true
+                  masterCompany: null
+                  organizationType: SUCURSAL
+                  personeryType: JURIDICA
+                  companyType: HOSTAL
+                  nitType: RUC
+                  stakeholderType: CLIENTE_INTERNO
+                  userAudit:
+                    loginname: ZOLYTO
+                    corporate: CAA
+                    branch: '-'
+      tags:
+        - company
+      operationId: creaBranch
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
 components:
   schemas: {}

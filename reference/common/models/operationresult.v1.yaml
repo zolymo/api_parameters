@@ -1,0 +1,17 @@
+title: operationResult
+type: object
+x-tags:
+  - result
+properties:
+  codigo:
+    type: string
+  descripcion:
+    type: string
+  codigobackend:
+    type: string
+x-examples:
+  resultado crea entidad:
+    value:
+      codigo: '0000'
+      descripcion: Satisfactorio
+      codigobackend: null

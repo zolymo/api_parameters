@@ -12,3 +12,9 @@ required:
   - corporate
   - branch
 description: modelo de usuario logueado
+x-examples:
+  userAuditVO:
+    value:
+      loginname: ZOLYMO
+      corporate: BAA
+      branch: BAX
