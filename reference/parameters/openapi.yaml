@@ -115,7 +115,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../common/models/operationresult.v1.yaml
+                $ref: ./models/operationresult.v1.yaml
               examples:
                 corporativoCreado:
                   value:
@@ -127,7 +127,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: ../common/models/companyvo.v1.yaml
+              $ref: ./models/companyvo.v1.yaml
             examples:
               creaCorporativo:
                 value:
@@ -215,7 +215,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../common/models/operationresult.v1.yaml
+                $ref: ./models/operationresult.v1.yaml
               examples:
                 editado CAX:
                   value:
@@ -228,7 +228,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: ../common/models/companyvo.v1.yaml
+              $ref: ./models/companyvo.v1.yaml
             examples:
               edita idkey=CAX:
                 value:
@@ -307,7 +307,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../common/models/operationresult.v1.yaml
+                $ref: ./models/operationresult.v1.yaml
               examples:
                 resultado:
                   value:
@@ -322,7 +322,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: ../common/models/userauditvo.v1.yaml
+              $ref: ./models/userauditvo.v1.yaml
             examples:
               usuarioLogueado:
                 value:
