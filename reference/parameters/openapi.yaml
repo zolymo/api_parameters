@@ -68,6 +68,10 @@ paths:
                 $ref: ./models/companyvo.v1.yaml
       description: Lista empresas de tipo Corporativo que fueron eliminadas
       operationId: getCorporateInactive
+      parameters:
+        - schema:
+            type: string
+          in: header
   /v1/company:
     get:
       summary: Lista Company Branch
@@ -253,6 +257,13 @@ paths:
                     loginname: ZOLYmO
                     corporate: CAA
                     branch: CAX
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
     get:
       summary: Lista sucursal
       responses:
@@ -323,6 +334,13 @@ paths:
                   loginname: ZOLYMO
                   corporate: CAA
                   branch: CAX
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
   /v1/company/inactive:
     get:
       summary: Lista Sucursales Eliminadas
@@ -375,6 +393,13 @@ paths:
                   corporate: CAA
                   branch: CAX
       operationId: getdeletedbranch
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
   /v1/itemtype/tiporegimen:
     get:
       summary: Lista régimen - branch
@@ -415,6 +440,13 @@ paths:
                   corporate: CAA
                   branch: CAX
       operationId: tiporegimen
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
   /v1/itemtype/docidentificacion:
     get:
       summary: Lista documento identificacion - corporativo
@@ -455,6 +487,13 @@ paths:
                   corporate: CAA
                   branch: CAX
       operationId: docidentificacion
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
   /v1/itemtype/doctributacion:
     get:
       summary: Lista documento tributación - corporativo
@@ -495,6 +534,13 @@ paths:
                   corporate: CAA
                   branch: CAX
       operationId: doctributacion
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
   /v1/itemtype/personeria:
     get:
       summary: Lista personeria - corporativo
@@ -529,6 +575,13 @@ paths:
                   corporate: CAA
                   branch: CAX
       operationId: personeria
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
   /v1/itemtype/tipocliente:
     get:
       summary: Lista tipo cliente - corporativo
@@ -563,6 +616,13 @@ paths:
                   corporate: CAA
                   branch: CAX
       operationId: tipocliente
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
   /v1/itemtype/stakeholder:
     get:
       summary: Lista stakeholder - corporativo
@@ -603,6 +663,13 @@ paths:
                   corporate: CAA
                   branch: CAX
       operationId: stakeholder
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
   /v1/itemtype/movimientologistico:
     get:
       summary: Lista movimiento logístico - corporativo
@@ -637,6 +704,13 @@ paths:
                   corporate: CAA
                   branch: CAX
       operationId: movimientologistico
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
   /v1/itemtype/estadofacturacion:
     get:
       summary: Lista estado facturacion - corporativo
@@ -677,6 +751,13 @@ paths:
                   corporate: CAA
                   branch: CAX
       operationId: estadofacturacion
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
   /v1/itemtype/tipoorganizacion:
     get:
       summary: Lista tipo organización - corporativo
@@ -711,6 +792,13 @@ paths:
                   corporate: CAA
                   branch: CAX
       operationId: tipoorganizacion
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
   /v1/itemtype/tipocompany:
     get:
       summary: Lista tipo company - corporativo
@@ -748,6 +836,13 @@ paths:
                   corporate: CAA
                   branch: CAX
       operationId: tipocompany
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
   /v1/itemtype/moneda:
     get:
       summary: Lista moneda - corporativo
@@ -782,6 +877,13 @@ paths:
                   corporate: CAA
                   branch: CAX
       description: Lista moneda - por cliente corporativo
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
   /v1/itemtype/ubicacionhabitacion:
     get:
       summary: Lista ubicación de habitación - sucursal
@@ -819,6 +921,13 @@ paths:
                   loginname: ZOLOYMO
                   corporate: CAA
                   branch: CAX
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
   /v1/itemtype/estadohabitacion:
     get:
       summary: Lista estado habitacion - sucursal
@@ -859,6 +968,13 @@ paths:
                   loginname: ZOLOYMO
                   corporate: CAA
                   branch: CAX
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
   /v1/itemtype/temporada:
     get:
       summary: Lista temporada - sucursal
@@ -896,5 +1012,12 @@ paths:
                   loginname: ZOLOYMO
                   corporate: CAA
                   branch: CAX
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
 components:
   schemas: {}
