@@ -1,0 +1,7 @@
+title: BuildVO
+type: object
+x-tags:
+  - hostal_parameters
+properties:
+  id:
+    type: string

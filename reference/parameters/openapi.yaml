@@ -375,5 +375,526 @@ paths:
                   corporate: CAA
                   branch: CAX
       operationId: getdeletedbranch
+  /v1/itemtype/tiporegimen:
+    get:
+      summary: Lista régimen - branch
+      tags:
+        - hostal_parameters
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./models/itemtypevo.v1.yaml
+              examples:
+                tiporegimen:
+                  value:
+                    - name: ESTANDAR
+                      tip: null
+                      uidc: CAA51R
+                    - name: CORPORATIVO
+                      tip: null
+                      uidc: CAA51C
+                    - name: PROMOCIONAL
+                      tip: null
+                      uidc: CAA51P
+                    - name: TOURIST
+                      tip: null
+                      uidc: CAA51T
+      description: Lista régimen - aplica por sucursal
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/itemtypevo.v1.yaml
+            examples:
+              usuarioLogueado:
+                value:
+                  loginname: ZOLOYMO
+                  corporate: CAA
+                  branch: CAX
+      operationId: tiporegimen
+  /v1/itemtype/docidentificacion:
+    get:
+      summary: Lista documento identificacion - corporativo
+      tags:
+        - global_parameters
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./models/itemtypevo.v1.yaml
+              examples:
+                docidentificacion:
+                  value:
+                    - name: DNI
+                      tip: Documento Nacional de Identidad
+                      uidc: CAA01D
+                    - name: CARNET EXTRANJERIA
+                      tip: Carnet de Extranjeria
+                      uidc: CAA01C
+                    - name: PASAPORTE
+                      tip: Pasaporte
+                      uidc: CAA01P
+                    - name: LIBRETA ELECTORAL
+                      tip: Libreta Electoral
+                      uidc: CAA01L
+      description: Lista documento de identificación - por cliente corporativo
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/userauditvo.v1.yaml
+            examples:
+              usuarioLogueado:
+                value:
+                  loginname: ZOLOYMO
+                  corporate: CAA
+                  branch: CAX
+      operationId: docidentificacion
+  /v1/itemtype/doctributacion:
+    get:
+      summary: Lista documento tributación - corporativo
+      tags:
+        - global_parameters
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./models/itemtypevo.v1.yaml
+              examples:
+                doctributacion:
+                  value:
+                    - name: DNI
+                      tip: Documento Nacional de Identidad
+                      uidc: CAA01D
+                    - name: CARNET EXTRANJERIA
+                      tip: Carnet de Extranjeria
+                      uidc: CAA01C
+                    - name: PASAPORTE
+                      tip: Pasaporte
+                      uidc: CAA01P
+                    - name: LIBRETA ELECTORAL
+                      tip: Libreta Electoral
+                      uidc: CAA01L
+      description: Lista documento de tributación - por cliente corporativo
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/userauditvo.v1.yaml
+            examples:
+              usuarioLogueado:
+                value:
+                  loginname: ZOLOYMO
+                  corporate: CAA
+                  branch: CAX
+      operationId: doctributacion
+  /v1/itemtype/personeria:
+    get:
+      summary: Lista personeria - corporativo
+      tags:
+        - global_parameters
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./models/itemtypevo.v1.yaml
+              examples:
+                personeria:
+                  value:
+                    - name: NATURAL
+                      tip: Personeria Natural
+                      uidc: CAA03N
+                    - name: JURIDICA
+                      tip: Personeria Juridica
+                      uidc: CAA03J
+      description: Lista documento de tributación - por cliente corporativo
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/userauditvo.v1.yaml
+            examples:
+              usuarioLogueado:
+                value:
+                  loginname: ZOLOYMO
+                  corporate: CAA
+                  branch: CAX
+      operationId: personeria
+  /v1/itemtype/tipocliente:
+    get:
+      summary: Lista tipo cliente - corporativo
+      tags:
+        - global_parameters
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./models/itemtypevo.v1.yaml
+              examples:
+                tipocliente:
+                  value:
+                    - name: PERSONA
+                      tip: ''
+                      uidc: CAA04P
+                    - name: EMPLEADO
+                      tip: ''
+                      uidc: CAA04E
+      description: Lista tipo de cliente - por cliente corporativo
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/userauditvo.v1.yaml
+            examples:
+              usuarioLogueado:
+                value:
+                  loginname: ZOLOYMO
+                  corporate: CAA
+                  branch: CAX
+      operationId: tipocliente
+  /v1/itemtype/stakeholder:
+    get:
+      summary: Lista stakeholder - corporativo
+      tags:
+        - global_parameters
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./models/itemtypevo.v1.yaml
+              examples:
+                stakeholder:
+                  value:
+                    - name: CLIENTE INTERNO
+                      tip: Uso Operativo
+                      uidc: CAA05D
+                    - name: CLIENTE EXTERNO
+                      tip: Uso Operativo
+                      uidc: CAA05C
+                    - name: PROVEEDOR EXTERNO
+                      tip: Uso Operativo
+                      uidc: CAA05P
+                    - name: PROVEEDOR INTERNO
+                      tip: Uso Operativo
+                      uidc: CAA05Q
+      description: Lista stakeholder - por cliente corporativo
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/userauditvo.v1.yaml
+            examples:
+              usuarioLogueado:
+                value:
+                  loginname: ZOLOYMO
+                  corporate: CAA
+                  branch: CAX
+      operationId: stakeholder
+  /v1/itemtype/movimientologistico:
+    get:
+      summary: Lista movimiento logístico - corporativo
+      tags:
+        - global_parameters
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./models/itemtypevo.v1.yaml
+              examples:
+                movimientologistico:
+                  value:
+                    - name: ENTRADA
+                      tip: Entrada / Compra / Movimiento Interno
+                      uidc: CAA06E
+                    - name: SALIDA
+                      tip: Salida / Venta / Uso
+                      uidc: CAA06S
+      description: Lista movimiento logístico - por cliente corporativo
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/userauditvo.v1.yaml
+            examples:
+              usuarioLogueado:
+                value:
+                  loginname: ZOLOYMO
+                  corporate: CAA
+                  branch: CAX
+      operationId: movimientologistico
+  /v1/itemtype/estadofacturacion:
+    get:
+      summary: Lista estado facturacion - corporativo
+      tags:
+        - global_parameters
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./models/itemtypevo.v1.yaml
+              examples:
+                estadofacturacion:
+                  value:
+                    - name: PENDIENTE
+                      tip: Por entregar/recibir comprobante
+                      uidc: CAA07P
+                    - name: ENTREGADO
+                      tip: Se entrego el comprobante
+                      uidc: CAA07E
+                    - name: ANULADO
+                      tip: Se anulo el comprobante
+                      uidc: CAA07A
+                    - name: RECIBIDO
+                      tip: Se recibio el comprobante
+                      uidc: CAA07R
+      description: Lista movimiento logístico - por cliente corporativo
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/userauditvo.v1.yaml
+            examples:
+              usuarioLogueado:
+                value:
+                  loginname: ZOLOYMO
+                  corporate: CAA
+                  branch: CAX
+      operationId: estadofacturacion
+  /v1/itemtype/tipoorganizacion:
+    get:
+      summary: Lista tipo organización - corporativo
+      tags:
+        - global_parameters
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./models/itemtypevo.v1.yaml
+              examples:
+                tipoorganizacion:
+                  value:
+                    - name: CORPORATIVO
+                      tip: Corporativo
+                      uidc: CAA08C
+                    - name: SUCURSAL FILIAL
+                      tip: Sucursal - Filial
+                      uidc: CAA08B
+      description: Lista tipo de organización - por cliente corporativo
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/userauditvo.v1.yaml
+            examples:
+              usuarioLogueado:
+                value:
+                  loginname: ZOLOYMO
+                  corporate: CAA
+                  branch: CAX
+      operationId: tipoorganizacion
+  /v1/itemtype/tipocompany:
+    get:
+      summary: Lista tipo company - corporativo
+      tags:
+        - global_parameters
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./models/itemtypevo.v1.yaml
+              examples:
+                tipocompany:
+                  value:
+                    - name: HOSTAL
+                      tip: ''
+                      uidc: CAA09M
+                    - name: HOSTEL
+                      tip: ''
+                      uidc: CAA09Q
+                    - name: HOTEL
+                      tip: ''
+                      uidc: CAA09H
+      description: Lista tipo de compañía - por cliente corporativo
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/userauditvo.v1.yaml
+            examples:
+              usuarioLogueado:
+                value:
+                  loginname: ZOLOYMO
+                  corporate: CAA
+                  branch: CAX
+      operationId: tipocompany
+  /v1/itemtype/moneda:
+    get:
+      summary: Lista moneda - corporativo
+      tags:
+        - global_parameters
+      operationId: moneda
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./models/itemtypevo.v1.yaml
+              examples:
+                moneda:
+                  value:
+                    - name: SOL
+                      tip: 'S/ '
+                      uidc: CAA11P
+                    - name: DOLAR
+                      tip: 'US$ '
+                      uidc: CAA11U
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/userauditvo.v1.yaml
+            examples:
+              usuarioLogueado:
+                value:
+                  loginname: ZOLOYMO
+                  corporate: CAA
+                  branch: CAX
+      description: Lista moneda - por cliente corporativo
+  /v1/itemtype/ubicacionhabitacion:
+    get:
+      summary: Lista ubicación de habitación - sucursal
+      tags:
+        - hostal_parameters
+      operationId: ubicacionhabitacion
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./models/itemtypevo.v1.yaml
+              examples:
+                ubicacionhabitacion:
+                  value:
+                    - name: INTERIOR
+                      tip: null
+                      uidc: CAA50I
+                    - name: MEZANINE
+                      tip: null
+                      uidc: CAA50M
+                    - name: VISTA A CALLE
+                      tip: null
+                      uidc: CAA50E
+      description: Lista ubicación de habitación - por sucursal
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/userauditvo.v1.yaml
+            examples:
+              usuarioLogueado:
+                value:
+                  loginname: ZOLOYMO
+                  corporate: CAA
+                  branch: CAX
+  /v1/itemtype/estadohabitacion:
+    get:
+      summary: Lista estado habitacion - sucursal
+      tags:
+        - hostal_parameters
+      operationId: estadohabitacion
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./models/itemtypevo.v1.yaml
+              examples:
+                estadohabitacion:
+                  value:
+                    - name: DISPONIBLE
+                      tip: null
+                      uidc: CAA52D
+                    - name: OCUPADO
+                      tip: null
+                      uidc: CAA52O
+                    - name: RESERVADO
+                      tip: null
+                      uidc: CAA52R
+                    - name: MANTIMIENTO
+                      tip: null
+                      uidc: CAA52M
+      description: Lista estado de habitación - por sucursal
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/userauditvo.v1.yaml
+            examples:
+              usuarioLogueado:
+                value:
+                  loginname: ZOLOYMO
+                  corporate: CAA
+                  branch: CAX
+  /v1/itemtype/temporada:
+    get:
+      summary: Lista temporada - sucursal
+      tags:
+        - hostal_parameters
+      operationId: temporada
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./models/itemtypevo.v1.yaml
+              examples:
+                temporada:
+                  value:
+                    - name: NORMAL
+                      tip: null
+                      uidc: CAA53L
+                    - name: ALTA
+                      tip: null
+                      uidc: CAA53H
+                    - name: MEDIA
+                      tip: null
+                      uidc: CAA53M
+      description: Lista temporada - por sucursal
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/userauditvo.v1.yaml
+            examples:
+              usuarioLogueado:
+                value:
+                  loginname: ZOLOYMO
+                  corporate: CAA
+                  branch: CAX
 components:
   schemas: {}

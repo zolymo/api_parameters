@@ -1,0 +1,21 @@
+title: ItemTypeVO
+type: object
+x-tags:
+  - global_parameters
+properties:
+  name:
+    type: string
+  tip:
+    type: string
+  uidc:
+    type: string
+required:
+  - name
+  - uidc
+x-examples:
+  tiporegimen:
+    value:
+      name: ESTANDAR
+      tip: null
+      uidc: CAA51R
+description: Parametros genericos de entidad corporativa y sucursal
