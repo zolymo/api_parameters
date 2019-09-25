@@ -68,10 +68,7 @@ paths:
                 $ref: ./models/companyvo.v1.yaml
       description: Lista empresas de tipo Corporativo que fueron eliminadas
       operationId: getCorporateInactive
-      parameters:
-        - schema:
-            type: string
-          in: header
+      parameters: []
   /v1/company:
     get:
       summary: Lista Company Branch
@@ -319,7 +316,7 @@ paths:
                     codigo: '0000'
                     descripcion: Satisfactorio
                     codigobackend: null
-      description: elimina sucursal
+      description: Elimina sucursal específica
       tags:
         - company
       operationId: borrabranch
@@ -1019,5 +1016,236 @@ paths:
           in: header
           name: Content-Type
           required: true
+  /v1/build:
+    get:
+      summary: Listar Edificio
+      tags:
+        - hostal_parameters
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./models/buildvo.v1.yaml
+              examples:
+                build:
+                  value:
+                    - createdBy: ZOLYMO
+                      createdAt: '22/09/2019 19:00:00'
+                      updatedBy: null
+                      updatedAt: null
+                      deletedBy: null
+                      deletedAt: null
+                      activeRow: true
+                      uidc: CAXE01
+                      name: E01
+                      uid: E01
+                      branchIdkey: CAX
+                      noFloors: '4'
+                      userAudit: null
+      description: Lista edificios de cada sucursal (branch) del usuario logueado
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/userauditvo.v1.yaml
+            examples:
+              usuarioLogueado:
+                value:
+                  loginname: ZOLOYMO
+                  corporate: CAA
+                  branch: CAX
+        description: ''
+    post:
+      summary: Crear Edificio
+      tags:
+        - hostal_parameters
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: ./models/operationresult.v1.yaml
+              examples:
+                build:
+                  value:
+                    codigo: '0000'
+                    descripcion: Satisfactorio
+                    codigobackend: null
+      description: Crea edificio en la sucursal (branch) del usuario logueado
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/buildvo.v1.yaml
+            examples:
+              build=E02:
+                value:
+                  createdBy: null
+                  createdAt: null
+                  updatedBy: null
+                  updatedAt: null
+                  deletedBy: null
+                  deletedAt: null
+                  activeRow: null
+                  uidc: null
+                  name: Edificio 02
+                  uid: E02
+                  branchIdkey: null
+                  noFloors: '6'
+                  userAudit:
+                    loginname: ZOLYMO
+                    corporate: CAA
+                    branch: CAX
+  '/v1/build/{uidc}':
+    parameters:
+      - type: string
+        name: uidc
+        in: path
+        schema:
+          type: string
+          default: CAXE02
+        required: true
+    get:
+      summary: Lista Edificio especpifico
+      tags:
+        - hostal_parameters
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./models/buildvo.v1.yaml
+              examples:
+                uidc=CAXE02:
+                  value:
+                    createdBy: ZOLYMO
+                    createdAt: '24/09/2019 02:39:22'
+                    updatedBy: null
+                    updatedAt: null
+                    deletedBy: null
+                    deletedAt: null
+                    activeRow: true
+                    uidc: CAXE02
+                    name: Edificio 02
+                    uid: E02
+                    branchIdkey: CAX
+                    noFloors: '6'
+                    userAudit: null
+      description: Lista edificio especifico - de acuerdo al usuario logueado
+      requestBody:
+        description: ''
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
+    put:
+      summary: Edita Edificio especifico
+      tags:
+        - hostal_parameters
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./models/operationresult.v1.yaml
+              examples:
+                resultado:
+                  value:
+                    codigo: '0000'
+                    descripcion: Satisfactorio
+                    codigobackend: null
+      description: Edita edificio especifico - de acuerdo al usuario logueado
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          description: ''
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/buildvo.v1.yaml
+            examples:
+              uidc=CAXE02:
+                value:
+                  createdBy: ZOLYMO
+                  createdAt: '24/09/2019 02:39:22'
+                  updatedBy: null
+                  updatedAt: null
+                  deletedBy: null
+                  deletedAt: null
+                  activeRow: true
+                  uidc: CAXE02
+                  name: Edif 03
+                  uid: E03
+                  branchIdkey: CAX
+                  noFloors: '4'
+                  userAudit:
+                    loginname: ZOLYTO
+                    corporate: CAA
+                    branch: CAX
+    delete:
+      summary: Elimina Edificio especifico
+      tags:
+        - hostal_parameters
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./models/operationresult.v1.yaml
+              examples:
+                uidc=CAXE02:
+                  value:
+                    codigo: '0000'
+                    descripcion: Satisfactorio
+                    codigobackend: null
+      description: Elimina edificio especifico
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          description: ''
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/userauditvo.v1.yaml
+            examples:
+              usuarioLogueado:
+                value:
+                  loginname: ZOLYTO
+                  corporate: CAA
+                  branch: CAX
+        description: ''
 components:
   schemas: {}

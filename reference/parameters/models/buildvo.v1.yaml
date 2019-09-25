@@ -3,5 +3,29 @@ type: object
 x-tags:
   - hostal_parameters
 properties:
-  id:
+  createdBy:
     type: string
+  createdAt:
+    type: string
+  updatedBy:
+    type: string
+  updatedAt:
+    type: string
+  deletedBy:
+    type: string
+  deletedAt:
+    type: string
+  activeRow:
+    type: boolean
+  uidc:
+    type: string
+  name:
+    type: string
+  uid:
+    type: string
+  branchIdkey:
+    type: string
+  noFloors:
+    type: string
+  userAudit:
+    $ref: ./userauditvo.v1.yaml
