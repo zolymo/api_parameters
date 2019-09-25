@@ -1064,6 +1064,7 @@ paths:
                   corporate: CAA
                   branch: CAX
         description: ''
+      operationId: getbuild
     post:
       summary: Crear Edificio
       tags:
@@ -1113,14 +1114,13 @@ paths:
                     loginname: ZOLYMO
                     corporate: CAA
                     branch: CAX
+      operationId: createBuild
   '/v1/build/{uidc}':
     parameters:
-      - type: string
+      - schema:
+          type: string
         name: uidc
         in: path
-        schema:
-          type: string
-          default: CAXE02
         required: true
     get:
       summary: Lista Edificio especpifico
@@ -1150,8 +1150,6 @@ paths:
                     noFloors: '6'
                     userAudit: null
       description: Lista edificio especifico - de acuerdo al usuario logueado
-      requestBody:
-        description: ''
       parameters:
         - schema:
             type: string
@@ -1159,6 +1157,7 @@ paths:
           in: header
           name: Content-Type
           required: true
+      operationId: getbuildspec
     put:
       summary: Edita Edificio especifico
       tags:
@@ -1209,6 +1208,7 @@ paths:
                     loginname: ZOLYTO
                     corporate: CAA
                     branch: CAX
+      operationId: editbuildspec
     delete:
       summary: Elimina Edificio especifico
       tags:
@@ -1247,5 +1247,6 @@ paths:
                   corporate: CAA
                   branch: CAX
         description: ''
+      operationId: deleteBuildspec
 components:
   schemas: {}
