@@ -1248,5 +1248,267 @@ paths:
                   branch: CAX
         description: ''
       operationId: deleteBuildspec
+  /v1/room:
+    get:
+      summary: Lista Room (Habitacion)
+      tags:
+        - hostal_parameters
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./models/roomvo.v1.yaml
+              examples:
+                listaroom:
+                  value:
+                    - createdBy: ZOLYTO
+                      createdAt: '24/09/2019 19:00:00'
+                      updatedBy: null
+                      updatedAt: null
+                      deletedBy: null
+                      deletedAt: null
+                      activeRow: true
+                      uidc: CAXT101
+                      name: T101
+                      uid: T101
+                      branchIdkey: CAX
+                      occupiedNoBed: '1'
+                      roomLocationType_uidc: CAA50E
+                      roomStatusType_uidc: CAA52D
+                      build_uidc: CAXE01
+                      noFloor: '1'
+                      roomType_uidc: CAAD
+                      userAudit: null
+      description: Lista habitaciones de cada sucursal (branch) del usuario logueado
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/userauditvo.v1.yaml
+            examples:
+              usuarioLogueado:
+                value:
+                  loginname: ZOLOYMO
+                  corporate: CAA
+                  branch: CAX
+      operationId: listaroom
+    post:
+      summary: Crea Room (Habitacion)
+      tags:
+        - hostal_parameters
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./models/operationresult.v1.yaml
+              examples:
+                created:
+                  value:
+                    codigo: '0000'
+                    descripcion: Satisfactorio
+                    codigobackend: null
+      description: Crea habitación en la sucursal (branch) del usuario logueado
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/roomvo.v1.yaml
+            examples:
+              room:
+                value:
+                  createdBy: null
+                  createdAt: null
+                  updatedBy: null
+                  updatedAt: null
+                  deletedBy: null
+                  deletedAt: null
+                  activeRow: null
+                  uidc: null
+                  uid: T102
+                  name: T102
+                  branchIdkey: null
+                  occupiedNoBed: '0'
+                  roomLocationType_uidc: CAA50I
+                  roomStatusType_uidc: CAA52D
+                  build_uidc: CAXE01
+                  noFloor: '1'
+                  roomType_uidc: CAAD
+                  userAudit:
+                    loginname: ZOLOYMO
+                    corporate: CAA
+                    branch: CAX
+        description: ''
+      operationId: crearoom
+  '/v1/room/{uidc}':
+    parameters:
+      - schema:
+          type: string
+          default: CAXT102
+        name: uidc
+        in: path
+        required: true
+    get:
+      summary: Lista Room especifico
+      tags:
+        - hostal_parameters
+      operationId: listaroomspec
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./models/roomvo.v1.yaml
+              examples:
+                uidc=CAXT102:
+                  value:
+                    createdBy: ZOLOYMO
+                    createdAt: '25/09/2019 02:10:39'
+                    updatedBy: null
+                    updatedAt: null
+                    deletedBy: null
+                    deletedAt: null
+                    activeRow: true
+                    uidc: CAXT102
+                    name: T102
+                    uid: T102
+                    branchIdkey: CAX
+                    occupiedNoBed: '0'
+                    roomLocationType_uidc: CAA50I
+                    roomStatusType_uidc: CAA52D
+                    build_uidc: CAXE01
+                    noFloor: '1'
+                    roomType_uidc: CAAD
+                    userAudit: null
+      description: Lista habitación especifica - de acuerdo al usuario logueado
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/roomvo.v1.yaml
+            examples:
+              usuarioLogueado:
+                value:
+                  loginname: ZOLOYMO
+                  corporate: CAA
+                  branch: CAX
+    delete:
+      summary: Elimina Room especifico
+      tags:
+        - hostal_parameters
+      operationId: deleteroomspec
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./models/operationresult.v1.yaml
+              examples:
+                resultado:
+                  value:
+                    codigo: '0000'
+                    descripcion: Satisfactorio
+                    codigobackend: null
+      description: Elimina habitación especifica
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/userauditvo.v1.yaml
+            examples:
+              usuarioLogueado:
+                value:
+                  loginname: ZOLOYMON
+                  corporate: CAA
+                  branch: CAX
+    put:
+      summary: Edita Room especifico
+      tags:
+        - hostal_parameters
+      operationId: editroomspec
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./models/operationresult.v1.yaml
+              examples:
+                resultado:
+                  value:
+                    codigo: '0000'
+                    descripcion: Satisfactorio
+                    codigobackend: null
+      description: Edita habitación especifico - de acuerdo al usuario logueado
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/roomvo.v1.yaml
+            examples:
+              uidc=CAXT102:
+                value:
+                  createdBy: ZOLOYMO
+                  createdAt: '25/09/2019 02:10:39'
+                  updatedBy: null
+                  updatedAt: null
+                  deletedBy: null
+                  deletedAt: null
+                  activeRow: true
+                  uidc: CAXT102
+                  name: R102
+                  uid: R102
+                  branchIdkey: CAX
+                  occupiedNoBed: '0'
+                  roomLocationType_uidc: CAA50I
+                  roomStatusType_uidc: CAA52D
+                  build_uidc: CAXE01
+                  noFloor: '1'
+                  roomType_uidc: CAAD
+                  userAudit:
+                    loginname: ZOLOMY
+                    corporate: CAA
+                    branch: CAX
+        description: ''
 components:
   schemas: {}

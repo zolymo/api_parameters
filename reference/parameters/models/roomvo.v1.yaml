@@ -1,0 +1,62 @@
+title: RoomVO
+type: object
+x-tags:
+  - hostal_parameters
+properties:
+  createdBy:
+    type: string
+  createdAt:
+    type: string
+  updatedBy:
+    type: string
+  updatedAt:
+    type: string
+  deletedBy:
+    type: string
+  deletedAt:
+    type: string
+  activeRow:
+    type: boolean
+  uidc:
+    type: string
+  name:
+    type: string
+  uid:
+    type: string
+  branchIdkey:
+    type: string
+  occupiedNoBed:
+    type: string
+  roomLocationType_uidc:
+    type: string
+  roomStatusType_uidc:
+    type: string
+  build_uidc:
+    type: string
+  noFloor:
+    type: string
+  roomType_uidc:
+    type: string
+  userAudit:
+    $ref: ./userauditvo.v1.yaml
+x-examples:
+  room:
+    value:
+      createdBy: ZOLYTO
+      createdAt: '24/09/2019 19:00:00'
+      updatedBy: null
+      updatedAt: null
+      deletedBy: null
+      deletedAt: null
+      activeRow: true
+      uidc: CAXT101
+      name: T101
+      uid: T101
+      branchIdkey: CAX
+      occupiedNoBed: '1'
+      roomLocationType_uidc: CAA50E
+      roomStatusType_uidc: CAA52D
+      build_uidc: CAXE01
+      noFloor: '1'
+      roomType_uidc: CAAD
+      userAudit: null
