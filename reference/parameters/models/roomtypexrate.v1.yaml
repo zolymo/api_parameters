@@ -1,0 +1,40 @@
+title: RoomTypexRate
+type: object
+x-tags:
+  - hostal_parameters
+properties:
+  createdBy:
+    type: string
+  createdAt:
+    type: string
+  updatedBy:
+    type: string
+  updatedAt:
+    type: string
+  deletedBy:
+    type: string
+  deletedAt:
+    type: string
+  activeRow:
+    type: boolean
+  uidc:
+    type: string
+  uid:
+    type: string
+  branchIdkey:
+    type: string
+  roomratetype_uidc:
+    type: string
+  roomtype_uidc:
+    type: string
+  moneytype_uidc:
+    type: string
+  rateLow:
+    type: number
+  rateHigh:
+    type: number
+  rateMid:
+    type: number
+  userAudit:
+    $ref: ./userauditvo.v1.yaml
+description: 'Precio x temporada, tipo de habitacion'

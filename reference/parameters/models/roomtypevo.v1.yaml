@@ -1,0 +1,44 @@
+title: RoomTypeVO
+type: object
+x-tags:
+  - hostal_parameters
+properties:
+  createdBy:
+    type: string
+  createdAt:
+    type: string
+  updatedBy:
+    type: string
+  updatedAt:
+    type: string
+  deletedBy:
+    type: string
+  deletedAt:
+    type: string
+  activeRow:
+    type: boolean
+  uidc:
+    type: string
+  name:
+    type: string
+  uid:
+    type: string
+  noBed:
+    type: string
+  noGuest:
+    type: string
+  minimalNight:
+    type: string
+  maximumHour:
+    type: string
+  masterIdkey:
+    type: string
+  shared:
+    type: boolean
+  priority:
+    type: string
+  maximumGuest:
+    type: string
+  userAudit:
+    $ref: ./userauditvo.v1.yaml
+description: Tipo de Habitacion

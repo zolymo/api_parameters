@@ -1,0 +1,36 @@
+title: SeasonCalendarVO
+type: object
+x-tags:
+  - hostal_parameters
+properties:
+  createdBy:
+    type: string
+  createdAt:
+    type: string
+  updatedBy:
+    type: string
+  updatedAt:
+    type: string
+  deletedBy:
+    type: string
+  deletedAt:
+    type: string
+  activeRow:
+    type: boolean
+  uidc:
+    type: string
+  name:
+    type: string
+  uid:
+    type: string
+  branchIdkey:
+    type: string
+  seasonType_uidc:
+    type: string
+  beginSeason:
+    type: string
+  endSeason:
+    type: string
+  userAudit:
+    $ref: ./userauditvo.v1.yaml
+description: Temporadas con fechas

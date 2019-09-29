@@ -1510,5 +1510,958 @@ paths:
                     corporate: CAA
                     branch: CAX
         description: ''
+  /v1/roomtype:
+    get:
+      summary: Lista RoomType (tipo de Habitacion)
+      tags:
+        - hostal_parameters
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./models/roomtypevo.v1.yaml
+              examples:
+                roomtype:
+                  value:
+                    - createdBy: ZOLYTO
+                      createdAt: '21/09/2019 17:31:14'
+                      updatedBy: null
+                      updatedAt: null
+                      deletedBy: null
+                      deletedAt: null
+                      activeRow: true
+                      uidc: CAAP
+                      name: PERSONAL
+                      uid: P
+                      noBed: '1'
+                      noGuest: '1'
+                      minimalNight: '1'
+                      maximumHour: '24'
+                      masterIdkey: CAA
+                      shared: false
+                      priority: '9'
+                      maximumGuest: '2'
+                      userAudit: null
+                    - createdBy: ZOLYTO
+                      createdAt: '21/09/2019 17:31:14'
+                      updatedBy: null
+                      updatedAt: null
+                      deletedBy: null
+                      deletedAt: null
+                      activeRow: true
+                      uidc: CAAM
+                      name: MAT. 2P
+                      uid: M
+                      noBed: '1'
+                      noGuest: '2'
+                      minimalNight: '1'
+                      maximumHour: '24'
+                      masterIdkey: CAA
+                      shared: false
+                      priority: '8'
+                      maximumGuest: '3'
+                      userAudit: null
+                    - createdBy: ZOLYTO
+                      createdAt: '21/09/2019 17:31:14'
+                      updatedBy: null
+                      updatedAt: null
+                      deletedBy: null
+                      deletedAt: null
+                      activeRow: true
+                      uidc: CAAQ
+                      name: MAT. QUEENSIZE
+                      uid: Q
+                      noBed: '1'
+                      noGuest: '2'
+                      minimalNight: '1'
+                      maximumHour: '24'
+                      masterIdkey: CAA
+                      shared: false
+                      priority: '7'
+                      maximumGuest: '3'
+                      userAudit: null
+                    - createdBy: ZOLYTO
+                      createdAt: '21/09/2019 17:31:14'
+                      updatedBy: null
+                      updatedAt: null
+                      deletedBy: null
+                      deletedAt: null
+                      activeRow: true
+                      uidc: CAAK
+                      name: MAT. KINGSIZE
+                      uid: K
+                      noBed: '1'
+                      noGuest: '2'
+                      minimalNight: '1'
+                      maximumHour: '24'
+                      masterIdkey: CAA
+                      shared: false
+                      priority: '6'
+                      maximumGuest: '3'
+                      userAudit: null
+                    - createdBy: ZOLYTO
+                      createdAt: '21/09/2019 17:31:14'
+                      updatedBy: null
+                      updatedAt: null
+                      deletedBy: null
+                      deletedAt: null
+                      activeRow: true
+                      uidc: CAAD
+                      name: DOBLE 2P
+                      uid: D
+                      noBed: '2'
+                      noGuest: '2'
+                      minimalNight: '1'
+                      maximumHour: '24'
+                      masterIdkey: CAA
+                      shared: false
+                      priority: '5'
+                      maximumGuest: '4'
+                      userAudit: null
+                    - createdBy: ZOLYTO
+                      createdAt: '21/09/2019 17:31:14'
+                      updatedBy: null
+                      updatedAt: null
+                      deletedBy: null
+                      deletedAt: null
+                      activeRow: true
+                      uidc: CAAT
+                      name: TRIPLE 2P
+                      uid: T
+                      noBed: '3'
+                      noGuest: '3'
+                      minimalNight: '1'
+                      maximumHour: '24'
+                      masterIdkey: CAA
+                      shared: false
+                      priority: '4'
+                      maximumGuest: '5'
+                      userAudit: null
+                    - createdBy: ZOLYTO
+                      createdAt: '21/09/2019 17:31:14'
+                      updatedBy: null
+                      updatedAt: null
+                      deletedBy: null
+                      deletedAt: null
+                      activeRow: true
+                      uidc: CAAC
+                      name: CUADRUPLE 2P
+                      uid: C
+                      noBed: '4'
+                      noGuest: '4'
+                      minimalNight: '1'
+                      maximumHour: '24'
+                      masterIdkey: CAA
+                      shared: false
+                      priority: '3'
+                      maximumGuest: '6'
+                      userAudit: null
+      description: Lista tipo de habitaciones de cada sucursal (branch) del usuario logueado
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/userauditvo.v1.yaml
+            examples:
+              usuarioLogueado:
+                value:
+                  loginname: ZOLOYMO
+                  corporate: CAA
+                  branch: CAX
+      operationId: listaroomtype
+    post:
+      summary: Crea RoomType (tipo de Habitacion)
+      tags:
+        - hostal_parameters
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: ./models/operationresult.v1.yaml
+              examples:
+                roomtype:
+                  value:
+                    codigo: '0000'
+                    descripcion: Satisfactorio
+                    codigobackend: null
+      description: Crea tipo de habitación en la sucursal (branch) del usuario logueado
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/roomtypevo.v1.yaml
+            examples:
+              roomType:
+                value:
+                  createdBy: null
+                  createdAt: null
+                  updatedBy: null
+                  updatedAt: null
+                  deletedBy: null
+                  deletedAt: null
+                  activeRow: null
+                  uidc: null
+                  name: PERSONAL 1P
+                  uid: R
+                  noBed: '1'
+                  noGuest: '1'
+                  minimalNight: '1'
+                  maximumHour: '24'
+                  masterIdkey: null
+                  shared: false
+                  priority: '8'
+                  maximumGuest: '2'
+                  userAudit:
+                    loginname: ZOLOYMO
+                    corporate: CAA
+                    branch: CAX
+      operationId: crearoomtype
+  '/v1/roomtype/{uidc}':
+    parameters:
+      - schema:
+          type: string
+          default: CAAM
+        name: uidc
+        in: path
+        required: true
+    get:
+      summary: Lista RoomType (tipo de Habitacion) especifico
+      tags:
+        - hostal_parameters
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./models/roomtypevo.v1.yaml
+              examples:
+                roomtype:
+                  value:
+                    createdBy: ZOLYTO
+                    createdAt: '21/09/2019 17:31:14'
+                    updatedBy: null
+                    updatedAt: null
+                    deletedBy: null
+                    deletedAt: null
+                    activeRow: true
+                    uidc: CAAM
+                    name: MAT. 2P
+                    uid: M
+                    noBed: '1'
+                    noGuest: '2'
+                    minimalNight: '1'
+                    maximumHour: '24'
+                    masterIdkey: CAA
+                    shared: false
+                    priority: '8'
+                    maximumGuest: '3'
+                    userAudit: null
+      description: Lista tipo de habitación especifica - de acuerdo al usuario logueado
+      parameters: []
+      operationId: listaroomtypespec
+    put:
+      summary: Edita RoomType especifico
+      tags:
+        - hostal_parameters
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./models/operationresult.v1.yaml
+              examples:
+                uidc=CAAM:
+                  value:
+                    codigo: '0000'
+                    descripcion: Satisfactorio
+                    codigobackend: null
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          description: ''
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/roomtypevo.v1.yaml
+            examples:
+              uidc=CAAM:
+                value:
+                  createdBy: ZOLYTO
+                  createdAt: '21/09/2019 17:31:14'
+                  updatedBy: null
+                  updatedAt: null
+                  deletedBy: null
+                  deletedAt: null
+                  activeRow: true
+                  uidc: CAAM
+                  name: MATRIMONIAL 2P
+                  uid: M
+                  noBed: '1'
+                  noGuest: '2'
+                  minimalNight: '1'
+                  maximumHour: '24'
+                  masterIdkey: CAA
+                  shared: false
+                  priority: '8'
+                  maximumGuest: '3'
+                  userAudit:
+                    loginname: ZOLOYMO
+                    corporate: CAA
+                    branch: CAX
+      operationId: editaroomtypespec
+      description: Edita tipo de habitación especifico - de acuerdo al usuario logueado
+    delete:
+      summary: Elimina RoomType especifico
+      tags:
+        - hostal_parameters
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./models/operationresult.v1.yaml
+              examples:
+                uidc=CAAM:
+                  value:
+                    codigo: '0000'
+                    descripcion: Satisfactorio
+                    codigobackend: null
+      description: Elimina tipo de habitacion especifica
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/userauditvo.v1.yaml
+        description: ''
+      operationId: eliminaroomtypespec
+  /v1/roomtypexrate:
+    get:
+      summary: Lista Precio x temporada
+      tags:
+        - hostal_parameters
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./models/roomtypexrate.v1.yaml
+              examples:
+                roomtypexrate:
+                  value:
+                    - createdBy: zolymo
+                      createdAt: '27/09/2019 19:00:00'
+                      updatedBy: null
+                      updatedAt: null
+                      deletedBy: null
+                      deletedAt: null
+                      activeRow: true
+                      uidc: CAAABX
+                      uid: ABX
+                      branchIdkey: CAX
+                      roomratetype_uidc: CAA51R
+                      roomtype_uidc: CAAQ
+                      moneytype_uidc: CAA11P
+                      rateLow: 45
+                      rateHigh: 50
+                      rateMid: 45
+                      userAudit: null
+                    - createdBy: ZOLOYMO
+                      createdAt: '28/09/2019 17:12:45'
+                      updatedBy: null
+                      updatedAt: null
+                      deletedBy: null
+                      deletedAt: null
+                      activeRow: true
+                      uidc: CAXRQP
+                      uid: RQP
+                      branchIdkey: CAX
+                      roomratetype_uidc: CAA51R
+                      roomtype_uidc: CAAQ
+                      moneytype_uidc: CAA11P
+                      rateLow: 45
+                      rateHigh: 50
+                      rateMid: 45
+                      userAudit: null
+      description: Lista precio por temporada
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/userauditvo.v1.yaml
+            examples:
+              usuarioLogueado:
+                value:
+                  loginname: ZOLOYMO
+                  corporate: CAA
+                  branch: CAX
+      operationId: listaroomtypexrate
+    post:
+      summary: Crea Precio por temporada
+      tags:
+        - hostal_parameters
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: ./models/roomtypexrate.v1.yaml
+              examples:
+                roomtypexrate:
+                  value:
+                    codigo: '0000'
+                    descripcion: Satisfactorio
+                    codigobackend: null
+      description: Crea precio por temporada y tipo de habitacion
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/roomtypexrate.v1.yaml
+            examples:
+              roomtypexrate:
+                value:
+                  createdBy: null
+                  createdAt: null
+                  updatedBy: null
+                  updatedAt: null
+                  deletedBy: null
+                  deletedAt: null
+                  activeRow: null
+                  uidc: null
+                  uid: ABY
+                  branchIdkey: null
+                  roomratetype_uidc: CAA51R
+                  roomtype_uidc: CAAQ
+                  moneytype_uidc: CAA11P
+                  rateLow: 45
+                  rateHigh: 50
+                  rateMid: 45
+                  userAudit:
+                    loginname: ZOLOYMO
+                    corporate: CAA
+                    branch: CAX
+      operationId: crearoomtypexrate
+  '/v1/roomtypexrate/{uidc}':
+    parameters:
+      - schema:
+          type: string
+        name: uidc
+        in: path
+        required: true
+    get:
+      summary: Lista Precio x temporada especifico
+      tags:
+        - hostal_parameters
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./models/roomtypexrate.v1.yaml
+              examples:
+                roomtypexrate:
+                  value:
+                    - createdBy: zolymo
+                      createdAt: '27/09/2019 19:00:00'
+                      updatedBy: null
+                      updatedAt: null
+                      deletedBy: null
+                      deletedAt: null
+                      activeRow: true
+                      uidc: CAAABX
+                      uid: ABX
+                      branchIdkey: CAX
+                      roomratetype_uidc: CAA51R
+                      roomtype_uidc: CAAQ
+                      moneytype_uidc: CAA11P
+                      rateLow: 45
+                      rateHigh: 50
+                      rateMid: 45
+                      userAudit: null
+                    - createdBy: ZOLOYMO
+                      createdAt: '28/09/2019 17:12:45'
+                      updatedBy: null
+                      updatedAt: null
+                      deletedBy: null
+                      deletedAt: null
+                      activeRow: true
+                      uidc: CAXRQP
+                      uid: RQP
+                      branchIdkey: CAX
+                      roomratetype_uidc: CAA51R
+                      roomtype_uidc: CAAQ
+                      moneytype_uidc: CAA11P
+                      rateLow: 45
+                      rateHigh: 50
+                      rateMid: 45
+                      userAudit: null
+      description: Lista precio por temporada especifica
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/userauditvo.v1.yaml
+            examples:
+              usuarioLogueado:
+                value:
+                  loginname: ZOLOYMO
+                  corporate: CAA
+                  branch: CAX
+        description: ''
+      operationId: listaroomtyptexratespec
+    put:
+      summary: Edita precio x temporada especifico
+      tags:
+        - hostal_parameters
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./models/operationresult.v1.yaml
+              examples:
+                resultado:
+                  value:
+                    codigo: '0000'
+                    descripcion: Satisfactorio
+                    codigobackend: null
+      description: Edita precio x termporada especifico
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/roomtypexrate.v1.yaml
+            examples:
+              uidc=CAXRQP:
+                value:
+                  createdBy: ZOLOYMO
+                  createdAt: '28/09/2019 17:12:45'
+                  updatedBy: null
+                  updatedAt: null
+                  deletedBy: null
+                  deletedAt: null
+                  activeRow: true
+                  uidc: CAXRQP
+                  uid: RQP
+                  branchIdkey: CAX
+                  roomratetype_uidc: CAA51R
+                  roomtype_uidc: CAAQ
+                  moneytype_uidc: CAA11P
+                  rateLow: 80
+                  rateHigh: 100
+                  rateMid: 80
+                  userAudit:
+                    loginname: ZOLOYMO
+                    corporate: CAA
+                    branch: CAX
+        description: ''
+      operationId: editaroomtypexratespec
+    delete:
+      summary: Elimina precio x temporada especifico
+      tags:
+        - hostal_parameters
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./models/operationresult.v1.yaml
+              examples:
+                resultado:
+                  value:
+                    codigo: '0000'
+                    descripcion: Satisfactorio
+                    codigobackend: null
+      description: Elimina precio x temporada especifico
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/userauditvo.v1.yaml
+            examples:
+              usuarioLogueado:
+                value:
+                  loginname: ZOLOYMO
+                  corporate: CAA
+                  branch: CAX
+      operationId: eliminaroomtyptexratespec
+  /v1/seasoncalendar:
+    get:
+      summary: Lista SeasonCalendar (Temporadas)
+      tags:
+        - hostal_parameters
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./models/seasoncalendarvo.v1.yaml
+              examples:
+                seasonCalendar:
+                  value:
+                    - createdBy: ZOLYTO
+                      createdAt: '20/09/2019 11:53:05'
+                      updatedBy: null
+                      updatedAt: null
+                      deletedBy: null
+                      deletedAt: null
+                      activeRow: true
+                      uidc: CAAH01052020
+                      name: Dia del Trabajador
+                      uid: H01052020
+                      branchIdkey: CAA
+                      seasonType_uidc: CAA53H
+                      beginSeason: 30/04/2020
+                      endSeason: 02/05/2020
+                      userAudit: null
+                    - createdBy: ZOLYTO
+                      createdAt: '20/09/2019 11:53:05'
+                      updatedBy: null
+                      updatedAt: null
+                      deletedBy: null
+                      deletedAt: null
+                      activeRow: true
+                      uidc: CAAH01112019
+                      name: Dia de Todos los Santos
+                      uid: H01112019
+                      branchIdkey: CAA
+                      seasonType_uidc: CAA53H
+                      beginSeason: 31/10/2019
+                      endSeason: 02/11/2019
+                      userAudit: null
+                    - createdBy: ZOLYTO
+                      createdAt: '20/09/2019 11:53:05'
+                      updatedBy: null
+                      updatedAt: null
+                      deletedBy: null
+                      deletedAt: null
+                      activeRow: true
+                      uidc: CAAH09042020
+                      name: Semana Santa
+                      uid: H09042020
+                      branchIdkey: CAA
+                      seasonType_uidc: CAA53H
+                      beginSeason: 08/04/2020
+                      endSeason: 11/04/2020
+                      userAudit: null
+                    - createdBy: ZOLYTO
+                      createdAt: '20/09/2019 11:53:05'
+                      updatedBy: null
+                      updatedAt: null
+                      deletedBy: null
+                      deletedAt: null
+                      activeRow: true
+                      uidc: CAAH25072020
+                      name: Fiestas Patrias Peru
+                      uid: H25072020
+                      branchIdkey: CAA
+                      seasonType_uidc: CAA53H
+                      beginSeason: 24/07/2020
+                      endSeason: 28/07/2020
+                      userAudit: null
+                    - createdBy: ZOLYTO
+                      createdAt: '20/09/2019 11:53:05'
+                      updatedBy: null
+                      updatedAt: null
+                      deletedBy: null
+                      deletedAt: null
+                      activeRow: true
+                      uidc: CAAH25122020
+                      name: Navidad
+                      uid: H09042020
+                      branchIdkey: CAA
+                      seasonType_uidc: CAA53H
+                      beginSeason: 24/12/2020
+                      endSeason: 26/12/2020
+                      userAudit: null
+                    - createdBy: ZOLYTO
+                      createdAt: '20/09/2019 11:53:05'
+                      updatedBy: null
+                      updatedAt: null
+                      deletedBy: null
+                      deletedAt: null
+                      activeRow: true
+                      uidc: CAAH27062020
+                      name: Festividad de San Pedro y San Pablo
+                      uid: H27062020
+                      branchIdkey: CAA
+                      seasonType_uidc: CAA53H
+                      beginSeason: 26/06/2020
+                      endSeason: 28/06/2020
+                      userAudit: null
+      description: Lista SeasonCalendar (Temporadas) por fechas
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/userauditvo.v1.yaml
+            examples:
+              usuarioLogueado:
+                value:
+                  loginname: ZOLOYMO
+                  corporate: CAA
+                  branch: CAX
+      operationId: listaseasoncalendar
+    post:
+      summary: Crea SeasonCalendar (Temporadas)
+      tags:
+        - hostal_parameters
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./models/operationresult.v1.yaml
+              examples:
+                resultado:
+                  value:
+                    codigo: '0000'
+                    descripcion: Satisfactorio
+                    codigobackend: null
+      description: Crea SeasonCalendar (Temporadas) por fechas
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/seasoncalendarvo.v1.yaml
+            examples:
+              seasonCalendar:
+                value:
+                  createdBy: null
+                  createdAt: null
+                  updatedBy: null
+                  updatedAt: null
+                  deletedBy: null
+                  deletedAt: null
+                  activeRow: null
+                  uidc: null
+                  name: Cumple de Hans
+                  uid: null
+                  branchIdkey: null
+                  seasonType_uidc: CAA53H
+                  beginSeason: 30/10/2019
+                  endSeason: 02/11/2019
+                  userAudit:
+                    loginname: ZOLYTO
+                    corporate: CAA
+                    branch: CAX
+        description: ''
+      operationId: creaseasoncalendar
+  '/v1/seasoncalendar/{uidc}':
+    parameters:
+      - schema:
+          type: string
+        name: uidc
+        in: path
+        required: true
+    get:
+      summary: Lista SeasonCalendar especifico
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./models/seasoncalendarvo.v1.yaml
+              examples:
+                uidc=CAXH301002112019:
+                  value:
+                    createdBy: ZOLYTO
+                    createdAt: '28/09/2019 22:40:04'
+                    updatedBy: null
+                    updatedAt: null
+                    deletedBy: null
+                    deletedAt: null
+                    activeRow: true
+                    uidc: CAXH301002112019
+                    name: Cumple de Hans
+                    uid: H301002112019
+                    branchIdkey: CAX
+                    seasonType_uidc: CAA53H
+                    beginSeason: 29/10/2019
+                    endSeason: 01/11/2019
+                    userAudit: null
+      description: Lista Season Calendar (Temporada) especifica
+      tags:
+        - hostal_parameters
+      operationId: listaseasoncalendarspec
+    put:
+      summary: Edita SeasonCalendar especifico
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./models/operationresult.v1.yaml
+              examples:
+                resultado:
+                  value:
+                    codigo: '0000'
+                    descripcion: Satisfactorio
+                    codigobackend: null
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/seasoncalendarvo.v1.yaml
+            examples:
+              uidc=CAXH301002112019:
+                value:
+                  createdBy: ZOLYTO
+                  createdAt: '28/09/2019 22:40:04'
+                  updatedBy: null
+                  updatedAt: null
+                  deletedBy: null
+                  deletedAt: null
+                  activeRow: true
+                  uidc: CAXH301002112019
+                  name: Cumple de Hans Richard
+                  uid: H301002112019
+                  branchIdkey: CAX
+                  seasonType_uidc: CAA53H
+                  beginSeason: 29/10/2019
+                  endSeason: 01/11/2019
+                  userAudit:
+                    loginname: ZOLOYMO
+                    corporate: CAA
+                    branch: CAX
+      description: Edita SeasonCalendar (temporada) especifico
+      tags:
+        - hostal_parameters
+      operationId: editaseasoncalendarspec
+    delete:
+      summary: Elimina SeasonCalendar Especifico
+      tags:
+        - hostal_parameters
+      operationId: eliminaseasoncalendarspec
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./models/operationresult.v1.yaml
+              examples:
+                resultado:
+                  value:
+                    codigo: '0000'
+                    descripcion: Satisfactorio
+                    codigobackend: null
+      description: Elimina SeasonCalendar (Temporada)
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/userauditvo.v1.yaml
+            examples:
+              usuarioLogueado:
+                value:
+                  loginname: ZOLYMTO
+                  corporate: CAA
+                  branch: CAX
 components:
   schemas: {}
